@@ -1,24 +1,28 @@
 <?php
 
 
-
 class Database {
-  
-  public static function getConnection(){
-    try {
-      $dsn = "pgsql:host=127.0.0.1;port=5432;dbname=inner;";
-      // make a database connection
-      $pdo = new PDO($dsn, 'postgres', 'postgres', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
-      if ($pdo) {
-        echo "Connected to the database successfully!";
-      }
-    } catch (PDOException $e) {
-      die($e->getMessage());
-    } finally {
-      if ($pdo) {
-        $pdo = null;
-      }
+  public static function getConnetion() {
+    // $envPath = realpath(dirname(__FILE__,1) . '/env.ini'); //não tá chegando ao env.ini
+    // $env = parse_ini_file($envPath);
+    $env = parse_ini_file('../env.ini');
+
+    $conn = new mysqli($env['host'], $env['username'],
+      $env['password'], $env['database']);
+
+    if($conn->connect_error) {
+      die("Error: " . $conn->connect_error);
     }
+
+    echo "Connected successfully";
+    return $conn;
+  }
+
+  public static function getResultFromQuery($sql) {
+    $conn = self::getConnetion();
+    $result = $conn->query($sql);
+    $conn->close();
+    return $result;
   }
 }
