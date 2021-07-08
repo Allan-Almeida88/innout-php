@@ -2,7 +2,7 @@
 require_once(dirname(__FILE__, 2) . '/src/config/config.php');
 require_once(dirname(__FILE__, 2) . '/src/views/login.php');
 
-// require_once(VIEW_PATH . '/login.php');
+require_once(CONTROLLER_PATH . '/loginController.php');
 // require_once(dirname(__FILE__, 2) . '/src/models/User.php');
 
 // echo User::getSelect(['name' => 'Chaves', 'email' => 'chaves@cod3r.com.br']);
