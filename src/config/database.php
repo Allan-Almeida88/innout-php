@@ -15,7 +15,7 @@ class Database {
       die("Error: " . $conn->connect_error);
     }
 
-    echo "Connected successfully";
+    // echo "Connected successfully";
     return $conn;
   }
 
