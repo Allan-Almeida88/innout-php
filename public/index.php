@@ -1,26 +1,21 @@
 <?php
 require_once(dirname(__FILE__, 2) . '/src/config/config.php');
-require_once(dirname(__FILE__, 2) . '/src/views/login.php');
+// require_once(dirname(__FILE__, 2) . '/src/views/login.php');
 
-require_once(CONTROLLER_PATH . '/loginController.php');
-// require_once(dirname(__FILE__, 2) . '/src/models/User.php');
+// loadView('login', ['texto' => 'abc123']);
 
-// echo User::getSelect(['name' => 'Chaves', 'email' => 'chaves@cod3r.com.br']);
-// echo '<br>';
-// print_r(User::get([], 'id','name'));
-// echo '<br>';
-// print_r($user->name);
-// // echo '<br>';
-// require_once(MODEL_PATH . '/Login.php');
+require_once(CONTROLLER_PATH . "/loginController.php");
+// loadView('login');
 
-// $login = new Login([
+// require_once(MODEL_PATH . "/Login.php");
+// $user = new Login([
 //   'email'     => 'admin@cod3r.com.br',
 //   'password'  => 'a'
 // ]);
 
 // try {
-//   $login->checkLogin();
+//   $user->checkLogin();
 //   echo 'Deu certo :)';
 // } catch (Exception $e) {
-//   echo 'Deu errado :P';
+//   echo 'Problema no login :(';
 // }

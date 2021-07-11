@@ -1,14 +1,19 @@
 <?php
-
 loadModel('Login');
+session_start();
+$exception = null;
 
-if(count($_POST) > 0) {
-  $login = new Login($_POST);
-  try {
-    $user = $login->checkLogin();
-    echo "Usuário $user->name conectado :)";
-  } catch (AppException $e) {
-    echo $e->getMessage();
-  }
+if (count($_POST) > 0) {
+    $login = new Login($_POST);
+    try {
+        $user = $login->checkLogin();
+        $_SESSION['user'] = $user;
+        header("Location: day_records.php");
+        exit();
+    } catch (AppException $e) {
+        $exception = $e;
+    }
 }
-loadView('login', $_POST);
+
+
+loadView('login', $_POST + ['exception' => $exception]);

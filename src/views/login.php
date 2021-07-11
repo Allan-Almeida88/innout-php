@@ -21,11 +21,12 @@
         <i class="icofont-runner-alt-1 ml-2"></i>
       </div>
 
-      <div class="login-body">
+      <div class="card-body">
+        <?= include(TEMPLATE_PATH . '/messages.php') ?>
         <div class="form-group">
           <label for="email">E-mail</label>
           <input type="email" id="email" name="email" class="form-control"
-            value="<?= $email ?>" placeholder="Informe o Email" autofocus> 
+            value="<?= isset($email) ? $email : '' ?>" placeholder="Informe o Email" autofocus> 
         </div>
         <div class="form-group">
           <label for="password">Senha</label>
