@@ -1,21 +1,13 @@
 <?php
+error_reporting(0);
 require_once(dirname(__FILE__, 2) . '/src/config/config.php');
-// require_once(dirname(__FILE__, 2) . '/src/views/login.php');
 
-// loadView('login', ['texto' => 'abc123']);
+$uri = urldecode(
+  parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
+);
 
-require_once(CONTROLLER_PATH . "/loginController.php");
-// loadView('login');
+if($uri === '/' || $uri === '' || $uri === '/index' ) {
+  $uri = '/loginController.php';
+}
 
-// require_once(MODEL_PATH . "/Login.php");
-// $user = new Login([
-//   'email'     => 'admin@cod3r.com.br',
-//   'password'  => 'a'
-// ]);
-
-// try {
-//   $user->checkLogin();
-//   echo 'Deu certo :)';
-// } catch (Exception $e) {
-//   echo 'Problema no login :(';
-// }
+require_once(CONTROLLER_PATH . "{$uri}");
