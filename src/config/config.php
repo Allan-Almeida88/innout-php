@@ -9,11 +9,11 @@ define('DAILY_TIME', 60 * 60 * 8);
 
 // Diretorios
 
-define('MODEL_PATH', realpath(dirname(__FILE__) . '/../models'));
-define('VIEW_PATH', realpath(dirname(__FILE__) . '/../views'));
-define('TEMPLATE_PATH', realpath(dirname(__FILE__) . '/../views/template'));
-define('CONTROLLER_PATH', realpath(dirname(__FILE__) . '/../controllers'));
-define('EXCEPTION_PATH', realpath(dirname(__FILE__) . '/../exceptions'));
+define('MODEL_PATH', realpath(dirname(__FILE__)       . '/../models'));
+define('VIEW_PATH', realpath(dirname(__FILE__)        . '/../views'));
+define('TEMPLATE_PATH', realpath(dirname(__FILE__)    . '/../views/template'));
+define('CONTROLLER_PATH', realpath(dirname(__FILE__)  . '/../controllers'));
+define('EXCEPTION_PATH', realpath(dirname(__FILE__)   . '/../exceptions'));
 
 
 // Arquivos
