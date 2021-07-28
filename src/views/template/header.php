@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+<meta charset="utf-8"/>
+    <!-- <meta charset="UTF-8"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/comum.css">
@@ -27,7 +28,7 @@
     <div class="dropdown">
       <div class="dropdown-button">
         <img class="avatar" 
-          src="<?= "www.gravatar.com/avatar.php?gravatar_id=" .
+          src="<?= "http://www.gravatar.com/avatar.php?gravatar_id=" .
           md5(strtolower(trim($_SESSION['user']->email))) ?>" alt="user">
         <span class="ml-3">
           <?= $_SESSION['user']->name ?>
