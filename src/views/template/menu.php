@@ -29,6 +29,13 @@
           </i>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="test.php">
+          <i class="icofont-users mr-2">
+            Teste
+          </i>
+        </a>
+      </li>
     </ul>
   </nav>
   <div class="sidebar-widgets">

@@ -1,3 +1,6 @@
+<main class="content">
 <?php
+echo User::getCount(['id' => 3]);
+?>
+</main>
 
-print_r(getLastDayOfMonth(date('Y-m-d')));
