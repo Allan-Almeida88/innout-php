@@ -3,7 +3,7 @@
 
 class Database {
 
-  public static function getConnetion() {
+  public static function getConnection() {
     // $envPath = realpath(dirname(__FILE__,1) . '/env.ini'); //não tá chegando ao env.ini
     // $env = parse_ini_file($envPath);
     $env = parse_ini_file('../env.ini');
@@ -20,14 +20,14 @@ class Database {
   }
 
   public static function getResultFromQuery($sql) {
-    $conn = self::getConnetion();
+    $conn = self::getConnection();
     $result = $conn->query($sql);
     $conn->close();
     return $result;
   }
 
   public static function executeSQL($sql) {
-    $conn = self::getConnetion();
+    $conn = self::getConnection();
 
     if(!mysqli_query($conn, $sql)) {
       throw new Exception(mysqli_error($conn));
